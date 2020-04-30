@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://127.0.0.1:3408/Fake_New_Visualization_Shiny-final.Rmd -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[3.4.1];shiny[1.4.0.2]</script>
+<script src="./COVID 19 Misinformation _ Fake News Records_files/json2-min.js.download"></script>
+<script src="./COVID 19 Misinformation _ Fake News Records_files/jquery.min.js.download"></script>
+<link href="./COVID 19 Misinformation _ Fake News Records_files/shiny.css" rel="stylesheet">
+<script src="./COVID 19 Misinformation _ Fake News Records_files/shiny.min.js.download"></script>  <script src="./COVID 19 Misinformation _ Fake News Records_files/rmd_loader.js.download"></script>
+  <link href="./COVID 19 Misinformation _ Fake News Records_files/rmd_loader.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" href="./COVID 19 Misinformation _ Fake News Records_files/bootstrap.min.css"><script src="./COVID 19 Misinformation _ Fake News Records_files/bootstrap.min.js.download"></script><script src="./COVID 19 Misinformation _ Fake News Records_files/html5shiv.min.js.download"></script><script src="./COVID 19 Misinformation _ Fake News Records_files/respond.min.js.download"></script><script src="./COVID 19 Misinformation _ Fake News Records_files/tabsets.js.download"></script><link rel="stylesheet" type="text/css" href="./COVID 19 Misinformation _ Fake News Records_files/default.css"><script src="./COVID 19 Misinformation _ Fake News Records_files/highlight.js.download"></script><link rel="stylesheet" type="text/css" href="./COVID 19 Misinformation _ Fake News Records_files/rmd_perf.css"><script src="./COVID 19 Misinformation _ Fake News Records_files/rmd_perf.js.download"></script><meta name="rstudio_origin" content="127.0.0.1:15224"><script src="./COVID 19 Misinformation _ Fake News Records_files/rsiframe.js.download"></script>
+
+
+<meta name="generator" content="pandoc">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+
+
+<meta name="author" content="Thi Tran">
+
+
+<title>COVID 19 Misinformation / Fake News Records</title>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type="text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+<script type="text/javascript" src="./COVID 19 Misinformation _ Fake News Records_files/MathJax.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+  <div>
+    <div data-display-if="!output.__reactivedoc__" data-ns-prefix="" style="display: none;">
+      <div id="rmd_loader_wrapper">
+        <div id="rmd_loader" style="">
+          <p>Please wait...</p>
+          <img src="./COVID 19 Misinformation _ Fake News Records_files/rmd_loader.gif">
+        </div>
+      </div>
+    </div>
+    <div id="__reactivedoc__" class="shiny-html-output shiny-bound-output">
+
+
+
+
+
+
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="section-header">
+
+
+
+<h1 class="title toc-ignore">COVID 19 Misinformation / Fake News Records</h1>
+<h4 class="author">Thi Tran</h4>
+<h4 class="date">4/29/2020</h4>
+
+</div>
+
+
+<div id="section-background-information" class="section level3">
+<h3>Background Information</h3>
+<ul>
+<li><p>Coronavirus Pandemic is a global healthcare crisis originated from Wuhan, China in December 2019 and then exponentially widespread to various countries around the world in the early to middle 2020. Reported deaths increased from 26 at the end of January to around 3,000 at the beginning of March and then dramatically expanded to more than 200,000 deaths at the end of April 2020. Daily confirmed new cases jumped from around 1,800 cases per day on March 1 to around 100,000 cases per day, and total reported cases worldwide are at more than 3 million cases at the end of April, 2020. Many countries have tried various efforts including stay-at-home orders, economic lockdown, suspended airports and transportations or mandatory prevention methods applied partially or entirely to their citizens with a lot of consequences.</p></li>
+<li><p>In that situation, when people are panic and confused with unusual situation, they seek for as much information as possible to save themselves and their families, friends and possibly the community. Hence, it creates an ideal environment for misinformation or fake news to bloom and widespread. Fake news are spread sometimes much faster than the actual pandemic.</p></li>
+<li><p>Defined as misleading information, misinformation might have the motives of ethical intentions to inform the community and minimize harms in such a crisis but does not have enough time and efforts to confirm the legitimacy of contents, or have the motives of bad intentions such as gaining benefits for the information creators or simply causing unnecessary panics, worrysome, confusion and sufferings in the community of victims. Regardless the good or bad intention, fake news or misinformation messages especially in contexts of crises can create significant harmful consequences or damages toward targetted victims in various ways, as some researchers already pointed out such as physical harms, financial harms, psychological harms, social harms, reputational harms, safety harms, privacy harms, and confusion harms (Thi Tran et al., 2019 conference papers).</p></li>
+<li><p>It is necessary that we analyze characteristics of fake news or misinformation messages to help the efforts of recognizing fake news, eliminating or limiting the spread of fake news, detecting targetted communities or quantifying possible harms from those fake news.</p></li>
+<li><p>This research is therefore built to advance knowledge from current efforts regarding facing COVID 19 or coronavirus pandemic misinformation.</p></li>
+<li><p>Some examples of Coronavirus - COVID fake news or misinformation messages:</p>
+<ul>
+<li><p>This is <a href="https://github.com/thitran82/COVID19_FakeNews_Visualization/blob/master/Coronavirus%20fake%20news%201.png">a list of fake news with extracted features and sources</a>.</p></li>
+<li><p>This is <a href="https://github.com/thitran82/COVID19_FakeNews_Visualization/blob/master/Coronavirus%20fake%20news%202.png">a list of summarized fake news messages</a>.</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="section-introducing-the-dataset" class="section level3">
+<h3>Introducing the dataset:</h3>
+<p>The data used in this research project was obtained from a publicly revealed dataset from researchers of Princeton University through <a href="https://esoc.princeton.edu/files/covid-019-disinformation-data">this link</a> File Type: Other Publications File extension: xls Publication Year: 2020 Author: Jacob N. Shapiro, Jan Oledan</p>
+<p>The dataset captured various features from more than 620 fake news or misinformation messages or claims related to coronavirus or COVID 19 pandemic.</p>
+</div>
+<div id="section-considered-research-questions" class="section level3">
+<h3>Considered Research Questions:</h3>
+<p>#’Question group 1: Changes of records in different categories through the time:</p>
+<ul>
+<li><p><strong>Q1. Changes in numbers of total fake news posts in different languages (presented by primary languages) through the time.</strong></p></li>
+<li><p><strong>Q2. Changes in numbers of total fake news posts in different categories of main narratives through the time.</strong></p></li>
+<li><p><strong>Q3. Changes in numbers of total fake news posts in different motives through the time.</strong></p></li>
+<li><p><strong>Q4. Changes in numbers of total fake news posts in different sources through the time (individual actors, state sponsors, media, companies, political actors, and some combined types).</strong></p></li>
+<li><p><strong>Q5. Changes in numbers of total fake news posts in different misinformation types through the time.</strong></p></li>
+</ul>
+<p>#’Question group 2: Changes of records in different categories through the time:</p>
+<ul>
+<li><p><strong>Q6. Changes in numbers of total fake news posts in groups of motives based on different languages (presented by primary languages).</strong></p></li>
+<li><p><strong>Q7. Changes in numbers of total fake news posts in groups of motives based on different categories of main narratives.</strong></p></li>
+<li><p><strong>Q8. Changes in numbers of total fake news posts in groups of motives based on different sources (individual actors, state sponsors, media, companies, political actors, and some combined types).</strong></p></li>
+<li><p><strong>Q5. Changes in numbers of total fake news posts in different misinformation types through the time.</strong></p></li>
+</ul>
+</div>
+<div id="section-theoretical-background" class="section level3">
+<h3>Theoretical background</h3>
+<ul>
+<li><p>Number of fake news records will change through the timeline of developments of the coronavirus outbreaks.</p></li>
+<li><p>Both numbers and relatively comparable proportions of misinformation records based on certain categories such as motives (intentions of misinformation creators) or narratives (covered main topics of those messages) through the timeline of the pandemic developments. We want to examine those differences and timely changes.</p></li>
+</ul>
+</div>
+<div id="section-launching-the-shiny-app-for-interactive-visualization" class="section level3">
+<h3>Launching the Shiny App for interactive visualization:</h3>
+<iframe width="100%" height="400" class="shiny-frame" src="./COVID 19 Misinformation _ Fake News Records_files/saved_resource.html" __idm_frm__="6080"></iframe>
+</div>
+<div id="section-discussion" class="section level3">
+<h3>Discussion:</h3>
+<p>#’Questin group 1: Changes of records in different categories through the time:</p>
+<p><strong>Research question 1: Changes in numbers of total fake news posts in different languages (presented by primary languages) through the time.</strong> Trends fluctuated a lot. Records generally increased at the end of February and then significantly decreased in April. English and Mandarin dominated others in spreading fake news. German and Japanese also contributed a lot in fake news diffusion through time.</p>
+<p><strong>Research question 2: Changes in numbers of total fake news posts in different categories of main narratives through the time.</strong> Records gradually increased from January to the beginning of March then sharply increased until the beginning of April before falling down significantly. Misinformation about “false cures and preventative methods” dominated others until the end of March but then sharply decreased. 2 groups of fake news related to “emergency responses” and “COVID-19 status of individuals” got highest values compared to others since the beginning of April even though they already fell down sharply. Misinformation about the nature of the virus also accounted for large proportions in April.</p>
+<p><strong>Research question 3. Changes in numbers of total fake news posts in different motives through the time.</strong> Although the numbers fluctuated a lot, generally COVID 19 fake news reached the peak and stayed at high values in the entire March before falling down in April, similar to the status of other features. As we can expect, fake news that has the motive to create fear and based on politics dominated the situation all the time, while fake news about help is one of the lowest. Interestingly, misinformation about getting profits was one of the lowest proportions, indicating that financial intention is not a big encouragement to spread fake news compared to others in this COVID pandemic.</p>
+<p><strong>Research question 4. Changes in numbers of total fake news posts in different sources through the time (individual actors, state sponsors, media, companies, political actors, and some combined types).</strong> As we can see from the plot, it is interesting that individual actors accounted for most of the sources of misinformation, sometimes around 90%, while other sources, including all media channels, accounted for much less amounts. That can be the results of popular and extremely active social networks with billions of active users that constantly create and spread fake news. Media and other sources can generate the fake news, but social network users are the people who quickly and widely misinterprete and spread those misleading messages.</p>
+<p><strong>Q5. Changes in numbers of total fake news posts in different misinformation types through the time.</strong> Similar to others, records based on types of misinformation also significantly increased in March before falling down in April. As we can see from the graph, similar to Research Question 4, the only dominating type of fake news is false reporting, while the other 2 big ones as conspiracy and fake remedy just got much lower proportions, and others got nearly zero values.</p>
+<p>#’Question group 2: Changes of records in different categories through the time:</p>
+<p><strong>Q6. Changes in numbers of total fake news posts in groups of motives based on different languages (presented by primary languages).</strong> Generally, we can see that the overall records of motives have the highest value falls into the category Fear, followed by politics. Regarding the languages, similar to research question 1, Mandarin and English dominates others. Both Mandarin and English reached the highest percentages in the motive Fear, which is also the highest category.</p>
+<p>*Q7. Changes in numbers of total fake news posts in groups of motives based on different categories of main narratives.** Similar to research question 2, Emergency response and false cures / preventative measures lead the proportions of fake news in most of the motives, except for only one value of the narrative COVID 19 status of individuals, which got the highest share in motive Fear, the biggest influencer of Motive.</p>
+<p><strong>Q8. Changes in numbers of total fake news posts in groups of motives based on different sources (individual actors, state sponsors, media, companies, political actors, and some combined types).</strong> Similar to Research Question 4, we can see the source “Individual actors” got highest values in nearly all categories of misinformation regarding motives, which the biggest proportion around 90% was also in the biggest contributor of motives: Fear. Contributions of politics varied a lot, and nearly disappeared in some motives such as false hope, profit, severity, or fear.</p>
+<p><strong>Q9. Changes in numbers of total fake news posts in different misinformation types through the time.</strong> As mentioned in Research question 5, false reporting was the type that had most misinformation records. In detail, false reporting got highest shares in all the 2 top highest motives: fear and politics. Fake remery and conspiracy also got significantly high percentages, but they got highest values in some small motives such as false hope, help, profit or “undermine target country institution”.</p>
+</div>
+<div id="section-conclusion" class="section level3">
+<h3>Conclusion:</h3>
+<p>In such a large scale and high impact humanitarian crisis like COVID-19 pandemic, people got flooded with numerous information messages from different sources. Lack of time to confirm and with motivation of trying to save themselves or others, they can quickly become victims of misinformation and its harmful effects, especially from the popularity and dynamic natures of social media and social networks. This research used a publicly revealed dataset that is obtained day by day during this ongoing COVID 19 pandemic, and with various aspects or features. By considering fake news records grouped by certain features through the time, including primary language of the messages, main narratives (or the topics), motives, sources, misinformation types, and from those features toward a chosen feature Motive, this study revealed interesting findings about changes of fake news diffusions through time, as well as their proportions based on different motivations or motives of misinformation creators. This study can shed lights to help other future researchers define research directions, raise some suspected constructs for consideration, or reveal interesting unique patterns that this unusual era of COVID 19 pandemic is exposing toward worlwide communities. Seriously considering those points can help researchers, authorities, involved stakeholders, first responders and especially the potential victims figure out best guidelines or reaction plans in order to minimize or eliminate harms from such fake news or misinformation messages.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("section-TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+</div>
+  </div>
+
+
+
+</body></html>
